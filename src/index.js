@@ -1,15 +1,8 @@
-import MovieService from './components/movie-service'
+import ReactDOM from 'react-dom';
+import './bootstrap.min.css'
+import App from "./components/app";
 
-console.log('hello');
 
-const movie = new MovieService()
-
-// swapi.getAllPeople().then((people) => {
-//     people.forEach(p => {
-//         console.log(p.name);
-//     });
-// })
-
-movie.getPerson(3).then((person) => {
-    console.log(person.name);
-})
+ReactDOM.render(<App />,
+  document.getElementById('root')
+);

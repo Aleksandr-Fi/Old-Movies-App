@@ -7,13 +7,27 @@ import './app.css'
 
 export default class App extends Component {
 
-    const 
+    state = {
+        cardData: [
+            {
+                id: 1,
+                val: 'one'
+            },
+            {
+                id: 2,
+                val: 'two'
+            }
+        ]
+    }
+    
 
     render() {
+        const { cardData } = this.state
+
         return (
             <div>
                 <AppHeader />
-                <CardList />
+                <CardList cards={cardData} />
                 <Footer />
             </div>
         )
