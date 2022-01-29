@@ -2,24 +2,30 @@ import { Component } from 'react'
 import AppHeader from '../app-header'
 import CardList from '../card-list'
 import Footer from '../footer'
-// import MovieService from '../movie-service'
 import './app.css'
 
 export default class App extends Component {
 
+    maxId = 1 
+
     state = {
         cardData: [
-            {
-                id: 1,
-                val: 'one'
-            },
-            {
-                id: 2,
-                val: 'two'
-            }
+            this.createCardFilm(),
+            this.createCardFilm(),
+            this.createCardFilm(),
+            this.createCardFilm(),
+            this.createCardFilm(),
+            this.createCardFilm()
         ]
     }
-    
+
+    createCardFilm() {
+        return {
+            id: this.maxId,
+            title: `title ${this.maxId}`,
+            description: `description ${this.maxId++}`
+        }
+    }    
 
     render() {
         const { cardData } = this.state
